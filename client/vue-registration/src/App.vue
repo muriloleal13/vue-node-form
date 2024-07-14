@@ -5,7 +5,7 @@
       <span class="highlighted-text">{{ currentStep + 1 }}</span>
       <span>&nbsp;de 4</span>
     </h4>
-    <div style="display: flex; flex-direction: column; gap: 5px">
+    <div class="form">
       <component
         :is="currentStepComponent"
         :formData="formData"

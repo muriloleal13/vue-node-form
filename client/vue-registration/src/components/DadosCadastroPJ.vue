@@ -37,18 +37,24 @@
       <span v-if="errors.dataAbertura" class="error">{{ errors.dataAbertura }}</span>
     </label>
 
-    <label for="telefone">
-      Telefone
-      <input id="telefone" v-model="telefone" :readonly="readonly" placeholder="Telefone" />
-      <span v-if="errors.telefone" class="error">{{ errors.telefone }}</span>
-    </label>
+    <TheTelefone
+      :formData="formData"
+      :readonly="readonly"
+      :errors="errors"
+      @update="updateData"
+      @validate="validate"
+    />
   </div>
 </template>
 
 <script>
 import { defineComponent, toRefs, watch, reactive } from 'vue'
+import TheTelefone from './TheTelefone.vue'
 
 export default defineComponent({
+  components: {
+    TheTelefone
+  },
   props: ['formData', 'errors', 'readonly'],
   setup(props, { emit }) {
     const localFormData = reactive({ ...props.formData })
@@ -78,6 +84,10 @@ export default defineComponent({
       }
     }
 
+    const updateData = ({ telefone }) => {
+      localFormData.telefone = telefone
+    }
+
     const validate = () => {
       emit('validate')
     }
@@ -85,6 +95,7 @@ export default defineComponent({
     return {
       ...toRefs(localFormData),
       applyMask,
+      updateData,
       validate
     }
   }

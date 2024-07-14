@@ -31,26 +31,24 @@
       />
       <span v-if="errors.dataNascimento" class="error">{{ errors.dataNascimento }}</span>
     </label>
-
-    <label for="telefone">
-      Telefone
-      <input
-        id="telefone"
-        v-model="telefone"
-        @input="applyPhoneMask"
-        @blur="validate"
-        :readonly="readonly"
-        placeholder="Telefone"
-      />
-      <span v-if="errors.telefone" class="error">{{ errors.telefone }}</span>
-    </label>
+    <TheTelefone
+      :formData="formData"
+      :readonly="readonly"
+      :errors="errors"
+      @update="updateData"
+      @validate="validate"
+    />
   </div>
 </template>
 
 <script>
 import { defineComponent, toRefs, watch, reactive } from 'vue'
+import TheTelefone from './TheTelefone.vue'
 
 export default defineComponent({
+  components: {
+    TheTelefone
+  },
   props: ['formData', 'errors', 'readonly'],
   setup(props, { emit }) {
     const localFormData = reactive({ ...props.formData })
@@ -78,15 +76,8 @@ export default defineComponent({
       }
     }
 
-    const applyPhoneMask = () => {
-      localFormData.telefone = localFormData.telefone
-        .replace(/\D/g, '')
-        .replace(/^(\d{2})(\d)/g, '($1) $2')
-      if (localFormData.telefone.length <= 13) {
-        localFormData.telefone = localFormData.telefone.replace(/(\d{4})(\d)/, '$1-$2')
-      } else {
-        localFormData.telefone = localFormData.telefone.replace(/(\d{5})(\d)/, '$1-$2')
-      }
+    const updateData = ({ telefone }) => {
+      localFormData.telefone = telefone
     }
 
     const validate = () => {
@@ -96,7 +87,7 @@ export default defineComponent({
     return {
       ...toRefs(localFormData),
       applyMask,
-      applyPhoneMask,
+      updateData,
       validate
     }
   }
