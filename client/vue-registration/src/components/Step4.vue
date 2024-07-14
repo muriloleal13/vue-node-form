@@ -1,4 +1,3 @@
-<!-- Step4.vue -->
 <template>
   <div class="form">
     <h1 class="bold-h1">Revise suas informações</h1>

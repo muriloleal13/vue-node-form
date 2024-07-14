@@ -1,4 +1,3 @@
-<!-- Step3.vue -->
 <template>
   <div>
     <h1 class="bold-h1">Senha de acesso</h1>

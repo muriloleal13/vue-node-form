@@ -1,4 +1,3 @@
-<!-- Step2.vue -->
 <template>
   <div>
     <h1 class="bold-h1">

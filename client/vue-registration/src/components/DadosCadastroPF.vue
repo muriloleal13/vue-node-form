@@ -93,10 +93,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<style>
-.error {
-  color: red;
-  font-size: 0.8em;
-}
-</style>
