@@ -30,8 +30,6 @@ _Install dependencies._
 
 ```sh
 
-npm init
-
 npm install
 
 ```
@@ -40,9 +38,9 @@ npm install
 
 ```sh
 
-cd ./server
+npm run build-client
 
-node ./index.js
+npm start
 
 ```
 
