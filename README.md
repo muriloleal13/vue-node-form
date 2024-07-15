@@ -2,15 +2,17 @@
 
 Este projeto demonstra como utilizar Vue 3 + Composition API e um servidor NodeJS que renderiza inicialmente um formulário estático de cadastro de usuários e recebe os dados do registro via uma API.
 
+Pode ser acessado tanto via WebService em: https://vue-node-form.onrender.com/registration como também via clone do repositório.
+
 ## Getting Started 🚀
 
 Para esta aplicação foi utilizado apenas Vue 3 + Composition API e Setup Hook, sem uso de frameworks externos como Vue Router, Quasar ou demais.
 
-Também não foram utilizados frameworks para gerenciamento de estado, requisições HTTP ou frameworks de estilo como TailwindCSS
+Também não foram utilizados frameworks para gerenciamento de estado, requisições HTTP ou frameworks de estilo como TailwindCSS.
 
-O objetivo deste projeto é entender e utilizar conceitos básicos do Vue e JavaScript, sem auxílio de frameworks para facilitar o trabalho, e assim entendendo melhor todo o processo de uma aplicação pura
+O objetivo deste projeto é entender e utilizar conceitos básicos do Vue e JavaScript, sem auxílio de frameworks para facilitar o trabalho, e assim entendendo melhor todo o processo de uma aplicação pura.
 
-O projeto foi buildado, gerando um arquivo na pasta dist. Sendo assim, ao rodar o servidor NodeJS e acessar /registration, é feita uma requisicao GET que retorna o formulario em client/dist/index.html e a aplicação Vue é exibida
+O projeto foi buildado, gerando um arquivo na pasta dist. Sendo assim, ao rodar o servidor NodeJS e acessar /registration, é feita uma requisicao GET que retorna o formulario em client/dist/index.html e a aplicação Vue é exibida.
 
 ### Requirements 📋
 
