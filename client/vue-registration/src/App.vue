@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app">
     <h4>
       <span>Etapa&nbsp;</span>
       <span class="highlighted-text">{{ currentStep + 1 }}</span>
@@ -104,10 +104,10 @@ export default {
           if (!validatePhoneNumber(formData.value.telefone)) {
             errors.value.telefone = 'Telefone inválido'
           }
-        } else if (currentStep.value === 2) {
-          if (!validateNotEmpty(formData.value.senha)) {
-            errors.value.senha = 'Senha não pode estar vazia'
-          }
+        }
+      } else if (currentStep.value === 2) {
+        if (!validateNotEmpty(formData.value.senha)) {
+          errors.value.senha = 'Senha não pode estar vazia'
         }
       }
       return Object.keys(errors.value).length === 0
