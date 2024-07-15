@@ -7,11 +7,18 @@ const port = 3000;
 
 app.use(bodyParser.json());
 app.use(
-  express.static(path.join(__dirname, "../client/vue-registration/dist"))
+  "/assets",
+  express.static(path.join(__dirname, "../client/vue-registration/dist/assets"))
 );
 
 app.get("/registration", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/dist/index.html"));
+  res.sendFile(
+    path.join(__dirname, "../client/vue-registration/dist/index.html")
+  );
+});
+
+app.get("*", (req, res) => {
+  res.status(404).send("Page not found");
 });
 
 app.post("/registration", (req, res) => {
