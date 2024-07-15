@@ -2,7 +2,7 @@
   "name": "vue-node-form",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
     "start": "node server/index.js",
     "build-client": "cd client/vue-registration && npm install && npm run build",
